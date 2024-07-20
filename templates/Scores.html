@@ -1,49 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>R7 Pool Scores</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-      <div class="container">
-        <h1>Pool Scores</h1>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Bean</th>
-              <th>Chipper</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <form action="." method="POST">
-                    <input name="Ronan" placeholder="Bean Score" type="number">
-                    <input name= "Glenn" placeholder="Glenn Score" type="number">
-                    <input type="submit" class="btn btn-success" value="Post score">
-                </form>
-            </tr>
-             {% for score in scores %}
-            <tr>
-                <form action="/delete/{{ score.id }}" method="POST">
-                    <td>{{ score.Ronan }}</td>
-                    <td>{{ score.Glenn }}</td>
-                    <td><input type="submit" class="btn btn-danger" value="Delete"></td>
-                </form>
-
-            </tr>
-            {% endfor %}
-            <tr>
-                <td>{{ total_count.ronan }}</td>
-                <td>{{ total_count.glenn }}</td>
-                <td><bold>Total</bold></td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+<!doctype html>
+<html lang="en" id="whole-page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>R7 Pool Scores</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="Score.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pool Scores</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Bean</th>
+            <th>Chipper</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <form action="." method="POST">
+              <input name="Ronan" placeholder="Bean Score" type="number" />
+              <input name="Glenn" placeholder="Glenn Score" type="number" />
+              <input type="submit" class="btn btn-success" value="Post score" />
+            </form>
+          </tr>
+          {% for score in scores %}
+          <tr id="control-row">
+            <form action="/delete/{{ score.id }}" method="POST">
+              <td>{{ score.Ronan }}</td>
+              <td>{{ score.Glenn }}</td>
+              <td>
+                <input type="submit" class="btn btn-danger" value="Delete" />
+              </td>
+            </form>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td>{{ total_count.ronan }}</td>
+            <td>{{ total_count.glenn }}</td>
+            <td><bold>Total</bold></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

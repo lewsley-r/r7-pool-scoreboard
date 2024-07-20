@@ -16,6 +16,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 # Create a simple model for recordings
+
+
 class Scores(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     Ronan = db.Column(db.Integer)
@@ -24,18 +26,21 @@ class Scores(db.Model):
     def __repr__(self):
         return f"Scores('{self.Ronan}', {self.Glenn})"
 
+
 with app.app_context():
     db.create_all()
 
 # Route to display recordings
+
+
 @app.route("/", methods=["GET", "POST"])
 def display_scores():
     if request.method == "GET":
+
         total = {'ronan': 0, 'glenn': 0}
         for score in Scores.query.all():
             total['ronan'] += score.Ronan
             total['glenn'] += score.Glenn
-
 
         return render_template('Scores.html', scores=Scores.query.all(), total_count=total)
 
@@ -51,12 +56,6 @@ def delete_score(id):
     db.session.delete(score)
     db.session.commit()
     return redirect(url_for('display_scores'))
-
-
-@app.route("/test", methods=["GET"])
-def test():
-    return Scores.query.all()
-
 
 
 if __name__ == '__main__':
