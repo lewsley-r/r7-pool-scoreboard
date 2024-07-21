@@ -6,7 +6,7 @@
   width: fit-content;
   text-align: center;
   color: white;
-  padding 15px;
+  padding 45px;
   border-radius: 5px;
 }
 
@@ -22,4 +22,8 @@
 
 #title {
   color: #e85e26;
+}
+
+.uk-table th{
+    text-align:center;
 }
