@@ -1,7 +1,12 @@
 .container {
   background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
 }
 
 .table {
   width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }

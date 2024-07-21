@@ -31,9 +31,19 @@
         <tbody>
           <tr>
             <form action="." method="POST">
-              <input name="Ronan" placeholder="Bean Score" type="number" />
-              <input name="Glenn" placeholder="Glenn Score" type="number" />
-              <input type="submit" class="btn btn-success" value="Post score" />
+              <td>
+                <input name="Ronan" placeholder="Bean Score" type="number" />
+              </td>
+              <td>
+                <input name="Glenn" placeholder="Glenn Score" type="number" />
+              </td>
+              <td>
+                <input
+                  type="submit"
+                  class="btn btn-success"
+                  value="Post score"
+                />
+              </td>
             </form>
           </tr>
           {% for score in scores %}
