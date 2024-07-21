@@ -29,6 +29,22 @@
           </tr>
         </thead>
         <tbody>
+          {% for score in scores %}
+          <tr id="control-row">
+            <form action="/delete/{{ score.id }}" method="POST">
+              <td>{{ score.Ronan }}</td>
+              <td>{{ score.Glenn }}</td>
+              <td>
+                <input type="submit" class="btn btn-danger" value="Delete" />
+              </td>
+            </form>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td>{{ total_count.ronan }}</td>
+            <td>{{ total_count.glenn }}</td>
+            <td><bold>Total</bold></td>
+          </tr>
           <tr>
             <form action="." method="POST">
               <td>
@@ -45,22 +61,6 @@
                 />
               </td>
             </form>
-          </tr>
-          {% for score in scores %}
-          <tr id="control-row">
-            <form action="/delete/{{ score.id }}" method="POST">
-              <td>{{ score.Ronan }}</td>
-              <td>{{ score.Glenn }}</td>
-              <td>
-                <input type="submit" class="btn btn-danger" value="Delete" />
-              </td>
-            </form>
-          </tr>
-          {% endfor %}
-          <tr>
-            <td>{{ total_count.ronan }}</td>
-            <td>{{ total_count.glenn }}</td>
-            <td><bold>Total</bold></td>
           </tr>
         </tbody>
       </table>
