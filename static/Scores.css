@@ -10,3 +10,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.score-input {
+  max-width: fit-content;
+}
