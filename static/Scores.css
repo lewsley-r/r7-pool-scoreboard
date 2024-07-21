@@ -1,7 +1,7 @@
-#control-row {
-  width: fit-content;
-}
-
 .container {
   background-color: black;
+}
+
+.table {
+  width: fit-content;
 }
