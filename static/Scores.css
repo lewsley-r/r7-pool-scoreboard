@@ -2,6 +2,6 @@
   width: fit-content;
 }
 
-#whole-page {
+.container {
   background-color: black;
 }
