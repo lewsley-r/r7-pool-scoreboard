@@ -5,6 +5,9 @@
   margin-top: 20vh;
   width: fit-content;
   text-align: center;
+  color: white;
+  padding 15px;
+  border-radius: 5px;
 }
 
 .table {
@@ -15,4 +18,8 @@
 
 .score-input {
   max-width: fit-content;
+}
+
+#title {
+  color: #e85e26;
 }
