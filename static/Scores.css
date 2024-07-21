@@ -42,5 +42,6 @@
 } 
 
 #submit-btn{
-  background-color: green;
+  background-color: lightgreen;
+  color: white;
 }
