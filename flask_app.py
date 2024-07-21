@@ -36,7 +36,6 @@ with app.app_context():
 @app.route("/", methods=["GET", "POST"])
 def display_scores():
     if request.method == "GET":
-
         total = {'ronan': 0, 'glenn': 0}
         for score in Scores.query.all():
             total['ronan'] += score.Ronan
