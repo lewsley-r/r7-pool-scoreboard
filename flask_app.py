@@ -4,14 +4,14 @@ from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
 
-api_key = os.getenv('AIRTABLE_API_KEY')
-# api = Api(api_key)
-# table = api.table('app5VgB4Gt5plSkne', 'r7-pool')
+api = Api(os.getenv('AIRTABLE_API_KEY'))
+table = api.table('app5VgB4Gt5plSkne', 'r7-pool')
 
 
 @app.route("/", methods=["GET", "POST"])
 def display_scores():
-    return api_key
+    if request.method == "GET":
+        return table.all()
 
 
 @app.route("/delete/<int:id>", methods=["POST"])
