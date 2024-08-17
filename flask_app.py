@@ -11,7 +11,7 @@ table = api.table('app5VgB4Gt5plSkne', 'r7-pool')
 @app.route("/", methods=["GET", "POST"])
 def display_scores():
     if request.method == "GET":
-        return table.all()
+        return ''.join(table.all())
 
 
 @app.route("/delete/<int:id>", methods=["POST"])
