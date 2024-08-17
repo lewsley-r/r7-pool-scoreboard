@@ -13,6 +13,7 @@ total = {'Glenn': 0, 'Ronan': 0}
 for record in records:
     total['Glenn'] += record["fields"]["Glenn"]
     total['Ronan'] += record["fields"]["Ronan"]
+    record["fields"]["id"] = record["id"]
     sorted_records.append(record["fields"])
 
 
@@ -21,9 +22,13 @@ def display_scores():
     if request.method == "GET":
         return render_template('Scores.html', scores=sorted_records, total=total)
 
+    table.create("Ronan": request.form["Ronan"], "Glenn": request.form["Glenn"])
+    return redirect(url_for('display_scores'))
+
 
 @app.route("/delete/<int:id>", methods=["POST"])
 def delete_score(id):
+    table.delete(id)
     return redirect(url_for('display_scores'))
 
 
