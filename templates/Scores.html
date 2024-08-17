@@ -31,6 +31,7 @@
       <table class="table uk-table">
         <thead>
           <tr>
+            <th>Date</th>
             <th>Bean</th>
             <th>Chipper</th>
             <th></th>
@@ -40,6 +41,7 @@
           {% for score in scores %}
           <tr id="control-row">
             <form action="/delete/{{ score.id }}" method="POST">
+              <td>{{ score.Date }}</td>
               <td>{{ score.Ronan }}</td>
               <td>{{ score.Glenn }}</td>
               <td>
