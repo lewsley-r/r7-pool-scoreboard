@@ -5,7 +5,7 @@ from flask import Flask, redirect, render_template, request, url_for
 app = Flask(__name__)
 
 api_key = os.getenv('AIRTABLE_API_KEY')
-api = Api(api_key)
+# api = Api(api_key)
 table = api.table('app5VgB4Gt5plSkne', 'r7-pool')
 
 
