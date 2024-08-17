@@ -22,7 +22,8 @@ def display_scores():
     if request.method == "GET":
         return render_template('Scores.html', scores=sorted_records, total=total)
 
-    table.create("Ronan": request.form["Ronan"], "Glenn": request.form["Glenn"])
+    table.create(
+        {"Ronan": request.form["Ronan"], "Glenn": request.form["Glenn"]})
     return redirect(url_for('display_scores'))
 
 
