@@ -6,14 +6,12 @@ app = Flask(__name__)
 
 api_key = os.getenv('AIRTABLE_API_KEY')
 # api = Api(api_key)
-table = api.table('app5VgB4Gt5plSkne', 'r7-pool')
+# table = api.table('app5VgB4Gt5plSkne', 'r7-pool')
 
 
 @app.route("/", methods=["GET", "POST"])
 def display_scores():
-    if request.method == "GET":
-        # return table.all()
-        return api_key
+    return api_key
 
 
 @app.route("/delete/<int:id>", methods=["POST"])
