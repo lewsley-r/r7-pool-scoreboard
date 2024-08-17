@@ -8,12 +8,18 @@ api = Api(os.getenv('AIRTABLE_API_KEY'))
 table = api.table('app5VgB4Gt5plSkne', 'r7-pool')
 
 records = table.all()
+sorted_records = []
+total = {'Glenn': 0, 'Ronan': 0}
+for record in records:
+    total['Glenn'] += record["fields"]["Glenn"]
+    total['Ronan'] += record["fields"]["Ronan"]
+    sorted_records.append(record["fields"])
 
 
 @app.route("/", methods=["GET", "POST"])
 def display_scores():
     if request.method == "GET":
-        return records[1]
+        return render_template('Scores.html', scores=sorted_records, total=total)
 
 
 @app.route("/delete/<int:id>", methods=["POST"])
