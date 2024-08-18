@@ -27,7 +27,7 @@ def display_scores():
     return redirect(url_for('display_scores'))
 
 
-@app.route("/delete/<int:id>", methods=["POST"])
+@app.route("/delete/<id>", methods=["POST"])
 def delete_score(id):
     table.delete(id)
     return redirect(url_for('display_scores'))
