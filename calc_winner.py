@@ -21,6 +21,8 @@ def calcuate_winner():
             {"Name": max(total, key=total.get),  "Month": current_month})
         for record in score_records:
             score_table.delete(record['id'])
+    else:
+        print('Nothing to do here!')
 
 
 if __name__ == '__main__':
