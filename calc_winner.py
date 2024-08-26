@@ -2,14 +2,14 @@ from pyairtable import Api
 import os
 from datetime import datetime
 
-api = Api(os.getenv('AIRTABLE_API_KEY'))
+api = Api(os.environ.get('AIRTABLE_API_KEY'))
 winners_table = api.table('app5VgB4Gt5plSkne', 'r7-pool-winners')
 score_table = api.table('app5VgB4Gt5plSkne', 'r7-pool')
 
 
 def calcuate_winner():
-    print(os.getenv('AIRTABLE_API_KEY'))
-    # score_records = score_table.all()
+    # print(os.getenv('AIRTABLE_API_KEY'))
+    score_records = score_table.all()
     total = {'Glenn': 0, 'Ronan': 0}
     for record in score_records:
         total['Glenn'] += record["fields"]["Glenn"]
