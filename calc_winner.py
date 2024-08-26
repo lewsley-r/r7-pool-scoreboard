@@ -3,8 +3,9 @@ import os
 from datetime import datetime
 
 api = Api(os.getenv('AIRTABLE_API_KEY'))
+api2 = Api(os.getenv('AIRTABLE_API_KEY'))
 winners_table = api.table('app5VgB4Gt5plSkne', 'r7-pool-winners')
-score_table = api.table('app5VgB4Gt5plSkne', 'r7-pool')
+score_table = api2.table('app5VgB4Gt5plSkne', 'r7-pool')
 
 
 def calcuate_winner():
