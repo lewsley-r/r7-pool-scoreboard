@@ -11,6 +11,10 @@
   border: 1px solid white;
 }
 
+.totals {
+    color: red;
+  }
+
 .table {
   width: fit-content;
   margin-left: auto;
