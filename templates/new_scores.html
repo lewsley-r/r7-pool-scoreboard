@@ -41,6 +41,46 @@
         font-weight: bold;
       }
 
+      .score-input {
+        background-color: #2c2c2c;
+        padding: 20px;
+        border-bottom: 1px solid #555555;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .score-input label {
+        font-size: 16px;
+        margin-right: 10px;
+      }
+
+      .score-input input {
+        background-color: #444444;
+        border: 1px solid #555555;
+        border-radius: 5px;
+        padding: 8px;
+        color: #ffffff;
+        width: 100px;
+        margin-right: 20px;
+        text-align: center;
+      }
+
+      .score-input button {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .score-input button:hover {
+        background-color: #0056b3;
+      }
+
       .score-block {
         display: flex;
         justify-content: space-between;
@@ -118,6 +158,18 @@
     <div class="scoreboard">
       <div class="header">Pool Scoreboard</div>
 
+      <!-- Score Input Form -->
+      <div class="score-input">
+        <label for="score1">Bean's Score:</label>
+        <input type="number" id="score1" name="score1" placeholder="0" />
+
+        <label for="score2">Chipper's Score:</label>
+        <input type="number" id="score2" name="score2" placeholder="0" />
+
+        <button type="submit">Submit Scores</button>
+      </div>
+
+      <!-- Score Blocks -->
       {% for score in scores %}
       <div class="score-block">
         <div class="score-entry">
@@ -142,27 +194,26 @@
           <div class="score">{{ total.Glenn }}</div>
         </div>
       </div>
-      <div class="winners-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Month</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>August 2024</td>
-            </tr>
-            <tr>
-              <td>Jane Smith</td>
-              <td>July 2024</td>
-            </tr>
-            <!-- Add more rows as needed -->
-          </tbody>
-        </table>
-      </div>
+    </div>
+
+    <!-- Winners Table -->
+    <div class="winners-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Month</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for winner in winners}
+          <tr>
+            <td>{{ winner.Name }}</td>
+            <td>{{ winner.Month }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

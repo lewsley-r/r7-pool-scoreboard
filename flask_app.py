@@ -26,7 +26,7 @@ def display_scores():
             total['Ronan'] += record["fields"]["Ronan"]
             record["fields"]["id"] = record["id"]
             sorted_records.append(record["fields"])
-        return render_template('new_scores.html', scores=sorted_records, total=total)
+        return render_template('new_scores.html', scores=sorted_records, total=total, winners=winner_records)
     table.create(
         {"Ronan": int(request.form["Ronan"]), "Glenn": int(request.form["Glenn"])})
     return redirect(url_for('display_scores'))
