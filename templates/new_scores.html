@@ -159,16 +159,17 @@
       <div class="header">Pool Scoreboard</div>
 
       <!-- Score Input Form -->
-      <div class="score-input">
-        <label for="score1">Bean's Score:</label>
-        <input type="number" id="score1" name="score1" placeholder="0" />
+      <form action="." method="POST">
+        <div class="score-input">
+          <label for="score1">Bean's Score:</label>
+          <input type="number" id="score1" name="Ronan" placeholder="0" />
 
-        <label for="score2">Chipper's Score:</label>
-        <input type="number" id="score2" name="score2" placeholder="0" />
+          <label for="score2">Chipper's Score:</label>
+          <input type="number" id="score2" name="Glenn" placeholder="0" />
 
-        <button type="submit">Submit Scores</button>
-      </div>
-
+          <button type="submit">Submit Scores</button>
+        </div>
+      </form>
       <!-- Score Blocks -->
       {% for score in scores %}
       <div class="score-block">
