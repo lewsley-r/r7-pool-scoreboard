@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scoreboard</title>
+    <title>Two-Player Scoreboard</title>
     <style>
       body {
         font-family: "Arial", sans-serif;
@@ -21,7 +21,7 @@
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         width: 90%;
-        max-width: 600px;
+        max-width: 700px;
       }
 
       .header {
@@ -33,63 +33,73 @@
         font-weight: bold;
       }
 
-      .score-entry {
+      .score-block {
         display: flex;
         justify-content: space-between;
         padding: 15px 20px;
         border-bottom: 1px solid #dddddd;
       }
 
-      .score-entry:last-child {
-        border-bottom: none;
-      }
-
-      .name,
-      .score,
-      .date {
-        font-size: 18px;
-        color: #333333;
+      .score-entry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 48%;
       }
 
       .name {
-        flex: 3;
+        font-size: 18px;
+        color: #333333;
+        font-weight: bold;
       }
 
       .score {
-        flex: 1;
-        text-align: center;
+        font-size: 20px;
+        color: #007bff;
+        margin: 10px 0;
       }
 
       .date {
-        flex: 2;
-        text-align: right;
+        font-size: 14px;
         color: #666666;
+      }
+
+      .score-block:last-child {
+        border-bottom: none;
       }
     </style>
   </head>
   <body>
     <div class="scoreboard">
-      <div class="header">Scoreboard</div>
+      <div class="header">Two-Player Scoreboard</div>
 
-      <div class="score-entry">
-        <div class="name">John Doe</div>
-        <div class="score">95</div>
-        <div class="date">2024-08-31</div>
+      <div class="score-block">
+        <div class="score-entry">
+          <div class="name">John Doe</div>
+          <div class="score">95</div>
+          <div class="date">2024-08-31</div>
+        </div>
+        <div class="score-entry">
+          <div class="name">Jane Smith</div>
+          <div class="score">88</div>
+          <div class="date">2024-08-31</div>
+        </div>
       </div>
 
-      <div class="score-entry">
-        <div class="name">Jane Smith</div>
-        <div class="score">88</div>
-        <div class="date">2024-08-30</div>
+      <div class="score-block">
+        <div class="score-entry">
+          <div class="name">Alice Johnson</div>
+          <div class="score">76</div>
+          <div class="date">2024-08-30</div>
+        </div>
+        <div class="score-entry">
+          <div class="name">Bob Brown</div>
+          <div class="score">82</div>
+          <div class="date">2024-08-30</div>
+        </div>
       </div>
 
-      <div class="score-entry">
-        <div class="name">Alice Johnson</div>
-        <div class="score">76</div>
-        <div class="date">2024-08-29</div>
-      </div>
-
-      <!-- Add more score entries as needed -->
+      <!-- Add more score blocks as needed -->
     </div>
   </body>
 </html>
