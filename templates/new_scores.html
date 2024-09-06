@@ -67,7 +67,7 @@
         text-align: center;
       }
 
-      #score-button {
+      .score-input button {
         background-color: #e85e26;
         color: #ffffff;
         border: none;
@@ -78,7 +78,7 @@
         transition: background-color 0.3s;
       }
 
-      #score-button:hover {
+      .score-input button:hover {
         background-color: #0056b3;
       }
 
@@ -163,13 +163,14 @@
       <!-- Score Input Form -->
       <form action="." method="POST">
         <div class="score-input">
-          <label for="score1">Bean's Score:</label>
+          <label for="score1">Bean:</label>
           <input type="number" id="score1" name="Ronan" placeholder="0" />
 
-          <label for="score2">Chipper's Score:</label>
+          <label for="score2">Chipper:</label>
           <input type="number" id="score2" name="Glenn" placeholder="0" />
+
+          <button type="submit">Submit Scores</button>
         </div>
-        <button id="score-button" type="submit">Submit Scores</button>
       </form>
       <!-- Score Blocks -->
       {% for score in scores %}
