@@ -67,7 +67,7 @@
         text-align: center;
       }
 
-      .score-input button {
+      #score-button {
         background-color: #e85e26;
         color: #ffffff;
         border: none;
@@ -78,7 +78,7 @@
         transition: background-color 0.3s;
       }
 
-      .score-input button:hover {
+      #score-button:hover {
         background-color: #0056b3;
       }
 
@@ -169,7 +169,7 @@
           <label for="score2">Chipper's Score:</label>
           <input type="number" id="score2" name="Glenn" placeholder="0" />
         </div>
-        <button type="submit">Submit Scores</button>
+        <button id="score-button" type="submit">Submit Scores</button>
       </form>
       <!-- Score Blocks -->
       {% for score in scores %}
